@@ -19,7 +19,7 @@ module CodeClimate
     end
 
     class Configuration
-      attr_accessor :branch, :logger, :profile
+      attr_accessor :branch, :ci, :logger, :profile
 
       def logger
         @logger ||= default_logger

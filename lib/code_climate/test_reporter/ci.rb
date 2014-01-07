@@ -3,7 +3,10 @@ module CodeClimate
     class Ci
 
       def self.service_data
-        if ENV['TRAVIS']
+        if CodeClimate::TestReporter.configuration.ci
+          CodeClimate::TestReporter.configuration.ci
+
+        elsif ENV['TRAVIS']
           {
             name:             "travis-ci",
             branch:           ENV['TRAVIS_BRANCH'],
